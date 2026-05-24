@@ -16,15 +16,13 @@ O arquivo do Figma contém três partes dentro do mesmo projeto:
 
 ### 2. Front-end do portfólio
 
-O portfólio está publicado e acessível pelo link abaixo com todas as interações implementadas:
+O portfólio foi desenvolvido com auxílio da inteligência artificial Claude (Anthropic). As decisões estruturais, de conteúdo e de design foram tomadas por mim. A IA atuou como ferramenta de implementação técnica. As interações escolhidas para a ponderada estão documentadas no Figma.
 
 [Abrir portfólio](https://gabriel-gomes-pimentel.github.io/portifolio-desenvolvedor/)
 
-**Sobre o desenvolvimento:** o código deste portfólio foi desenvolvido com auxílio da inteligência artificial Claude (Anthropic). As decisões estruturais, de conteúdo e de design foram tomadas por mim. A IA atuou como ferramenta de implementação técnica.
-
 ### 3. Vídeo de apresentação
 
-Vídeo apresentando o portfólio, as interações, o guia de estilos, o desafio da Gaveta de Meias e os recursos utilizados.
+Vídeo apresentando o portfólio, as interações e o guia de estilos.
 
 [Assistir vídeo](https://drive.google.com/file/d/1u-eSuEGt00skyZ2X5qMbXQwDGWGKGX_x/view?usp=sharing)
 
