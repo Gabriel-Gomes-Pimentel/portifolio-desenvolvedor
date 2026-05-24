@@ -24,7 +24,7 @@ O portfólio está publicado e acessível pelo link abaixo com todas as interaç
 
 ### 3. Vídeo de apresentação
 
-Vídeo de até 2 minutos apresentando o portfólio, as interações, o guia de estilos, o desafio da Gaveta de Meias e os recursos utilizados.
+Vídeo apresentando o portfólio, as interações, o guia de estilos, o desafio da Gaveta de Meias e os recursos utilizados.
 
 [Assistir vídeo](https://drive.google.com/file/d/1u-eSuEGt00skyZ2X5qMbXQwDGWGKGX_x/view?usp=sharing)
 
