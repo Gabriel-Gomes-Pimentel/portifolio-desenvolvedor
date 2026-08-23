@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safira &mdash; Gabriel Gomes Pimentel</title>
+  <meta name="description" content="Modelo preditivo de detratores de NPS desenvolvido com a Azul Linhas Aereas, no Inteli." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <nav class="global-nav">
+    <div class="global-nav__inner">
+      <a href="../index.html#hero" class="global-nav__logo">G</a>
+      <ul class="global-nav__links">
+        <li><a href="../index.html#about">Sobre</a></li>
+        <li><a href="../index.html#projects">Projetos</a></li>
+        <li><a href="../index.html#contact">Contato</a></li>
+      </ul>
+      <button class="global-nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="tile tile--light project-detail">
+    <div class="container-wide">
+
+      <a href="../index.html#projects" class="back-link reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Voltar ao portf&oacute;lio
+      </a>
+
+      <div class="detail-head">
+        <span class="project-number reveal">Projeto 01 &middot; ago 2026, em andamento</span>
+        <h1 class="detail-title reveal delay-1">Safira</h1>
+        <p class="project-credit reveal delay-2">
+          <img src="../assets/inteli.png" alt="Inteli, Instituto de Tecnologia e Lideran&ccedil;a" />
+          <span>Projeto acad&ecirc;mico do Inteli com a Azul Linhas A&eacute;reas</span>
+        </p>
+      </div>
+
+      <div class="project-image-wrap reveal" style="border-radius: var(--radius-lg); margin-top: 40px; min-height: 0;">
+        <img src="../assets/safira.svg" alt="Safira, modelo preditivo de detratores de NPS para a Azul Linhas A&eacute;reas" class="project-image project-image--illustration" />
+      </div>
+
+      <section class="detail-block">
+        <h2 class="detail-label reveal">Sobre o projeto</h2>
+        <p class="detail-text reveal">Modelo preditivo de detratores de NPS desenvolvido com a Azul Linhas A&eacute;reas, no M&oacute;dulo 3 do Inteli. Hoje a companhia s&oacute; descobre a insatisfa&ccedil;&atilde;o depois do voo e depois que o passageiro decide responder &agrave; pesquisa, o que atrasa qualquer rea&ccedil;&atilde;o e ainda deixa de fora quem nunca responde.</p>
+        <p class="detail-text reveal">Em um time de 8, com rod&iacute;zio por todas as etapas, estamos construindo um modelo que estima o risco de detra&ccedil;&atilde;o antes da resposta, para que a &aacute;rea de Experi&ecirc;ncia do Cliente atue dentro da janela em que ainda d&aacute; para reverter. A base &eacute; real: cerca de 98 mil avalia&ccedil;&otilde;es de voos dom&eacute;sticos, anonimizadas pela pr&oacute;pria Azul em conformidade com a LGPD.</p>
+        <p class="detail-text reveal">O trabalho segue o CRISP-DM e est&aacute; na fase de compreens&atilde;o dos dados. At&eacute; aqui, o diagn&oacute;stico mostrou aus&ecirc;ncia estrutural de preenchimento (o cliente s&oacute; avalia o que viveu), campos concatenados de rota e de aeronave a decompor, e a necessidade de separar o que existe antes da resposta do que vem da pr&oacute;pria pesquisa, para evitar vazamento de alvo.</p>
+      </section>
+
+      <hr class="detail-rule" />
+
+      <section class="detail-block">
+        <h2 class="detail-label reveal">Tecnologias utilizadas</h2>
+        <div class="project-tags detail-tags reveal">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">pandas</span>
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">CRISP-DM</span>
+              <span class="project-tag">LGPD</span>
+              <span class="project-tag">Scrum</span>
+              <span class="project-tag">Git</span>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2 class="detail-label reveal">Minha contribui&ccedil;&atilde;o</h2>
+        <p class="detail-text reveal">Atuo no tratamento e na an&aacute;lise dos dados, no diagn&oacute;stico de qualidade e completude da base e na defini&ccedil;&atilde;o das vari&aacute;veis e das m&eacute;tricas que garantem que o modelo funcione na opera&ccedil;&atilde;o da companhia. Como o time trabalha com rod&iacute;zio, passo por todas as etapas do projeto.</p>
+        <div class="project-tags reveal" style="margin-top: 16px;">
+          <span class="project-tag project-tag--accent">Dados e an&aacute;lise</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>Copyright &copy; 2026 Gabriel Gomes Pimentel. Todos os direitos reservados.</p>
+      <p><a href="../index.html#projects">Voltar aos projetos &rsaquo;</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+
+</body>
+</html>
