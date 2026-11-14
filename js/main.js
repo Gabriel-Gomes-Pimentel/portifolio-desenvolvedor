@@ -235,3 +235,41 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+/* Barra de progresso da rolagem */
+(function () {
+  const bar = document.querySelector('.scroll-progress');
+  if (!bar) return;
+  let ticking = false;
+  function update() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.setProperty('--scroll', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
+
+/* Personagem do hero: os olhos acompanham o cursor */
+(function () {
+  const buddy = document.querySelector('.buddy');
+  if (!buddy || !window.matchMedia('(pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let ticking = false, mx = 0, my = 0;
+  function update() {
+    const r = buddy.getBoundingClientRect();
+    const dx = mx - (r.left + r.width / 2);
+    const dy = my - (r.top + r.height * 0.44);
+    const dist = Math.hypot(dx, dy) || 1;
+    const reach = Math.min(1, dist / 260) * 3.2;
+    buddy.style.setProperty('--px', (dx / dist * reach).toFixed(2) + 'px');
+    buddy.style.setProperty('--py', (dy / dist * reach).toFixed(2) + 'px');
+    ticking = false;
+  }
+  window.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();

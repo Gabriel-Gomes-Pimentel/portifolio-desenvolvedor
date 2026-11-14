@@ -58,7 +58,7 @@ body {
 }
 a { color: var(--color-primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 button, .pressable { transition: transform 120ms ease; }
 button:active, .pressable:active { transform: scale(0.95); }
 
@@ -1748,3 +1748,214 @@ footer {
   outline-offset: 3px;
 }
 .global-nav :focus-visible { outline-color: var(--color-primary-on-dark); }
+
+/* ============================================================
+   VIDA E MOVIMENTO — personagem do hero, cartões flutuando,
+   barra de progresso e aviãozinho do contato
+============================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary-on-dark);
+  transform: scaleX(var(--scroll, 0));
+  transform-origin: left center;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+#hero { overflow: hidden; }
+.hero-scene {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  animation: scene-in 900ms cubic-bezier(0.22, 1, 0.36, 1) 1100ms forwards;
+}
+@keyframes scene-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.hero-scene--buddy {
+  right: max(24px, calc(50% - 620px));
+  bottom: 64px;
+  width: clamp(200px, 21vw, 280px);
+  pointer-events: auto;
+}
+.hero-scene--cards {
+  left: max(24px, calc(50% - 600px));
+  top: 30%;
+  width: clamp(150px, 15vw, 200px);
+}
+.hero-scene svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* Cartões */
+.fcard-bg {
+  fill: var(--color-canvas);
+  stroke: var(--color-hairline);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.08));
+}
+.fcard { transform-box: fill-box; transform-origin: center; }
+.fcard--a { animation: drift 6s ease-in-out infinite; }
+.fcard--b { animation: drift 7s ease-in-out -2.5s infinite reverse; }
+@keyframes drift {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+.fc-bar {
+  fill: var(--color-primary);
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: bar-grow 3.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+.fc-bar.b1 { opacity: 0.35; animation-delay: 0s; }
+.fc-bar.b2 { opacity: 0.55; animation-delay: 0.15s; }
+.fc-bar.b3 { opacity: 0.75; animation-delay: 0.3s; }
+.fc-bar.b4 { animation-delay: 0.45s; }
+@keyframes bar-grow {
+  0%       { transform: scaleY(0.2); }
+  30%, 80% { transform: scaleY(1); }
+  100%     { transform: scaleY(0.2); }
+}
+.fc-line {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 130;
+  animation: line-draw 4s ease-in-out infinite;
+}
+@keyframes line-draw {
+  0%       { stroke-dashoffset: 130; }
+  45%, 85% { stroke-dashoffset: 0; }
+  100%     { stroke-dashoffset: -130; }
+}
+.fc-dot { fill: var(--color-primary); animation: dot-pop 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes dot-pop {
+  0%, 35%  { transform: scale(0); }
+  48%      { transform: scale(1.5); }
+  55%, 85% { transform: scale(1); }
+  100%     { transform: scale(0); }
+}
+.spark {
+  fill: var(--color-primary-on-dark);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+.spark.s2 { animation-delay: -0.9s; }
+.spark.s3 { animation-delay: -1.4s; }
+.spark.s4 { animation-delay: -0.4s; }
+@keyframes twinkle {
+  0%, 100% { transform: scale(0.3) rotate(0deg); opacity: 0; }
+  50%      { transform: scale(1) rotate(45deg); opacity: 1; }
+}
+
+/* Personagem */
+.bd-shadow  { fill: rgba(0, 0, 0, 0.07); }
+.bd-skin    { fill: #f1c7a5; }
+.bd-shirt   { fill: var(--color-ink); }
+.bd-collar  { fill: #3a3a3c; }
+.bd-sleeve  { fill: none; stroke: var(--color-ink); stroke-width: 20; stroke-linecap: round; }
+.bd-hair    { fill: #2a1c14; }
+.bd-hair-shine { fill: #47301f; }
+.bd-eye     { fill: #ffffff; }
+.bd-pupil   { fill: #2a1c14; }
+.bd-glint   { fill: #ffffff; }
+.bd-brow, .bd-smile { fill: none; stroke: #2a1c14; stroke-width: 3; stroke-linecap: round; }
+.bd-cheek   { fill: #f08a7a; opacity: 0.35; }
+.bd-desk    { fill: #d2d2d7; }
+.bd-lid     { fill: #ececf1; stroke: #d2d2d7; stroke-width: 1.5; }
+.bd-base    { fill: #c7c7cc; }
+.bd-logo    { fill: var(--color-primary); animation: logo-glow 2.4s ease-in-out infinite; }
+@keyframes logo-glow { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+.bd-code {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--color-primary);
+}
+.bd-bubble { transform-box: fill-box; transform-origin: 20% 100%; animation: bubble 5s ease-in-out infinite; }
+@keyframes bubble {
+  0%, 12%   { transform: scale(0); opacity: 0; }
+  20%       { transform: scale(1.12); opacity: 1; }
+  26%, 80%  { transform: scale(1); opacity: 1; }
+  90%, 100% { transform: scale(0); opacity: 0; }
+}
+.bd-head { transform-box: fill-box; transform-origin: 50% 100%; animation: head-bob 3.4s ease-in-out infinite; }
+@keyframes head-bob {
+  0%, 100% { transform: rotate(-2.5deg) translateY(0); }
+  50%      { transform: rotate(2.5deg) translateY(1.5px); }
+}
+.bd-body { transform-box: fill-box; transform-origin: 50% 100%; animation: breathe 3.4s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.025); } }
+.bd-eyes { transform-box: fill-box; transform-origin: center; animation: blink 4.6s infinite; }
+@keyframes blink {
+  0%, 44%, 48%, 92%, 96%, 100% { transform: scaleY(1); }
+  46%, 94%                     { transform: scaleY(0.08); }
+}
+.bd-pupils { transform: translate(var(--px, 0px), var(--py, 0px)); transition: transform 160ms ease-out; }
+.bd-arm { transform-box: fill-box; }
+.bd-arm--l { animation: type-l 0.42s ease-in-out infinite alternate; }
+.bd-arm--r { animation: type-r 0.42s ease-in-out -0.21s infinite alternate; transform-origin: 20% 0%; }
+@keyframes type-l { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+@keyframes type-r { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+/* Aceno ao passar o mouse */
+.hero-scene--buddy:hover .bd-arm--r { animation: wave 0.9s ease-in-out infinite; }
+@keyframes wave {
+  0%, 100% { transform: rotate(-128deg); }
+  50%      { transform: rotate(-104deg); }
+}
+.hero-scene--buddy:hover .bd-smile { d: path("M134 144q16 18 32 0"); }
+
+@media (max-width: 1100px) {
+  .hero-scene--cards { display: none; }
+  .hero-scene--buddy {
+    position: relative;
+    right: auto; bottom: auto;
+    width: 190px;
+    margin: 36px auto 56px;
+  }
+}
+
+/* Aviãozinho de papel no contato */
+#contact { position: relative; overflow: hidden; }
+.contact-plane {
+  position: absolute;
+  top: 56px;
+  left: calc(50% + 190px);
+  width: 110px;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+.plane-wing { fill: var(--color-primary); }
+.plane-fold { fill: #004a99; }
+.plane-edge { fill: none; stroke: var(--color-primary); stroke-width: 1; stroke-linejoin: round; }
+.plane-trail {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 3 7;
+  opacity: 0.45;
+  animation: trail 1.2s linear infinite;
+}
+@keyframes trail { to { stroke-dashoffset: -20; } }
+.contact-plane { animation: plane-fly 5.5s ease-in-out infinite; }
+@keyframes plane-fly {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(14px, -16px) rotate(-6deg); }
+}
+@media (max-width: 900px) { .contact-plane { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene { animation: none; opacity: 1; }
+  .hero-scene *, .contact-plane, .contact-plane * { animation: none !important; }
+  .bd-bubble { opacity: 1; transform: none; }
+  .fc-line { stroke-dasharray: none; }
+  .spark { opacity: 1; }
+  .scroll-progress { display: none; }
+}
