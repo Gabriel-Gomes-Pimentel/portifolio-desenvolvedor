@@ -1,34 +1,54 @@
-# Portfólio Pessoal Gabriel Gomes Pimentel
+# Portfólio de Gabriel Gomes Pimentel
 
-Entrega da atividade ponderada de design: guia de estilos, front-end do portfólio com interações e vídeo de apresentação.
+Site pessoal com meus projetos em dados, machine learning e desenvolvimento de sistemas, feito em HTML, CSS e JavaScript puros.
 
-## Itens entregues
+**Site no ar:** https://gabriel-gomes-pimentel.github.io/portifolio-desenvolvedor/
 
-### 1. Guia de Estilos (Figma)
+![Captura da página inicial do portfólio](assets/captura-portfolio.jpg)
 
-O arquivo do Figma contém três partes dentro do mesmo projeto:
+## Sobre
 
-- **Guia de Estilos** com cores, tipografia, ícones, espaçamento e bordas reais do portfólio
-- **Protótipo interativo** da página de detalhamento de projeto com 3 interações
-- **Desafio Gaveta de Meias** com divisórias dinâmicas usando Auto Layout e Wrap
+Sou estudante de Engenharia da Computação no Inteli e curso Análise e Desenvolvimento de Sistemas na FGV, em São Paulo. O site reúne os projetos que entreguei a empresas parceiras no Inteli e na Inteli Júnior, minha stack e minha trajetória.
 
-[Abrir no Figma](https://www.figma.com/design/Wm77g3Bp40BQ5uYXYfrb5N/Portf%C3%B3lio-Gabriel-Gomes-Pimentel-%E2%80%94-Design-System---Prot%C3%B3tipo?node-id=64-53&t=sZxaU1dz3mgZSJyV-1)
+## Projetos em destaque
 
-### 2. Front-end do portfólio
+- **Safira** (Azul Linhas Aéreas): modelo de machine learning que prevê detratores de NPS antes da resposta à pesquisa.
+- **Safra Control** (ATVOS): CRM web de parceiros agrícolas, aprovado e em produção.
+- **As Aventuras de Marcielo** (Cielo): serious game web aprovado para os treinamentos da empresa.
+- **Refúgios climáticos** (SEMASA Santo André): dispositivo IoT que mede temperatura e umidade em pontos de sombra. Em andamento.
+- **TROP Cargo** (Inteli Júnior): plataforma de CRM e cotações para uma empresa de logística. Em andamento.
+- **JusAjuda**: integração ao banco de dados, publicação em domínio próprio e otimização de uma plataforma de acesso à justiça.
 
-O portfólio foi desenvolvido com auxílio da inteligência artificial Claude (Anthropic). As decisões estruturais, de conteúdo e de design foram tomadas por mim. A IA atuou como ferramenta de implementação técnica. As interações escolhidas para a ponderada estão documentadas no Figma.
+## Tecnologias
 
-[Abrir portfólio](https://gabriel-gomes-pimentel.github.io/portifolio-desenvolvedor/)
+- HTML, CSS e JavaScript puros, sem frameworks nem bibliotecas
+- Figma, para o design system e o protótipo
+- GitHub Pages, para a publicação
 
-### 3. Vídeo de apresentação
+## Estrutura de pastas
 
-Vídeo apresentando o portfólio, as interações e o guia de estilos.
+```
+portifolio-desenvolvedor/
+├── index.html          página principal
+├── css/style.css       design system (variáveis) e estilos
+├── js/main.js          animações, menu e formulário de contato
+├── projetos/           páginas de detalhe de cada projeto
+└── assets/             imagens, favicon e currículo em PDF
+```
 
-[Assistir vídeo](https://drive.google.com/file/d/1u-eSuEGt00skyZ2X5qMbXQwDGWGKGX_x/view?usp=sharing)
+## Como rodar localmente
 
-## Tecnologias utilizadas
+O site é estático. Basta clonar o repositório e abrir o `index.html` no navegador:
 
-- HTML e CSS
-- Figma (Auto Layout, Componentes, Smart Animate)
-- Claude (Anthropic) auxílio na implementação do front-end
-- OBS Studio gravação do vídeo
+```bash
+git clone https://github.com/Gabriel-Gomes-Pimentel/portifolio-desenvolvedor.git
+cd portifolio-desenvolvedor
+```
+
+Para servir com um servidor local, rode `python -m http.server 8000` na pasta e acesse http://localhost:8000.
+
+## Design
+
+O design system e o protótipo foram feitos no Figma antes do código: [abrir no Figma](https://www.figma.com/design/Wm77g3Bp40BQ5uYXYfrb5N/Portf%C3%B3lio-Gabriel-Gomes-Pimentel-%E2%80%94-Design-System---Prot%C3%B3tipo?node-id=64-53).
+
+O portfólio foi desenvolvido com auxílio da inteligência artificial Claude (Anthropic). As decisões estruturais, de conteúdo e de design foram tomadas por mim. A IA atuou como ferramenta de implementação técnica.
