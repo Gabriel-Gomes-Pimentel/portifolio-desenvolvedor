@@ -911,6 +911,24 @@ button:active, .pressable:active { transform: scale(0.95); }
   .tech-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+.tech-group + .tech-group { margin-top: 40px; }
+.tech-group-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.231px;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tech-grid--group { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 760px) {
+  .tech-grid--group { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 400px) {
+  .tech-grid--group { grid-template-columns: repeat(2, 1fr); }
+}
+
 .tech-card {
   aspect-ratio: 1 / 1;
   background: var(--color-canvas);
