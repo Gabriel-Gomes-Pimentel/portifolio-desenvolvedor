@@ -1246,6 +1246,22 @@ button:active, .pressable:active { transform: scale(0.95); }
   border-radius: var(--radius-pill);
   padding: 4px 10px;
 }
+/* Card sem imagem, para projetos sem captura de tela */
+.projects-grid--compact {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 32px;
+}
+@media (max-width: 1024px) {
+  .projects-grid--compact { grid-template-columns: 1fr; }
+}
+.project-card--compact { grid-template-columns: 1fr; }
+.project-card--compact .project-info {
+  padding: 32px;
+  justify-content: flex-start;
+}
+.project-card--compact .project-title { font-size: 28px; }
+.project-card--compact .project-actions { margin-top: auto; padding-top: 8px; }
+
 .project-link { margin-top: 8px; }
 .project-github-link { gap: 6px; }
 .project-github-link::after { content: none; }
