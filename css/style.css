@@ -9,7 +9,7 @@
   --color-body:             #1d1d1f;
   --color-body-on-dark:     #ffffff;
   --color-ink-muted-80:     #333333;
-  --color-ink-muted-48:     #7a7a7a;
+  --color-ink-muted-48:     #6e6e73;
 
   /* Surface */
   --color-canvas:           #ffffff;
@@ -341,8 +341,8 @@ button:active, .pressable:active { transform: scale(0.95); }
 }
 @media (max-width: 760px) {
   .timeline-item--now .timeline-year::before {
-    left: 0;
-    top: 8px;
+    left: 14px;
+    top: 2px;
     transform: none;
   }
   @keyframes dot-pulse {
@@ -1099,15 +1099,16 @@ button:active, .pressable:active { transform: scale(0.95); }
   }
   .timeline-year {
     grid-area: year;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     color: var(--color-ink);
     font-weight: 600;
-    padding-top: 2px;
+    padding-top: 24px;
+    background: var(--color-canvas-parchment);
   }
   .timeline-year::after {
-    left: 0;
-    top: 8px;
+    left: 14px;
+    top: 2px;
     transform: none;
   }
   .timeline-role {
@@ -1740,3 +1741,10 @@ footer {
 }
 .detail-head .project-credit img { width: 70px; }
 .detail-head .project-credit span { font-size: 15px; }
+
+/* Foco visível para navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 3px;
+}
+.global-nav :focus-visible { outline-color: var(--color-primary-on-dark); }
